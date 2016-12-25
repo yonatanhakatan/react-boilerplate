@@ -4,5 +4,5 @@
 
 html {
     @include fsBody;
-    @include fontSize(14px);
+    font-size: 14px;
 }

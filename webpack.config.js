@@ -1,11 +1,13 @@
 const path = require('path');
 const autoprefixer = require('autoprefixer');
+const pxtorem = require('postcss-pxtorem');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: ['babel-polyfill', './assets/react/app.js'],
   output: {
-    path: path.resolve(__dirname, 'public/_js/'),
-    publicPath: '/_js/',
+    path: path.resolve(__dirname, 'public/_build/'),
+    publicPath: '/_build/',
     filename: 'bundle.js',
   },
   devServer: {
@@ -31,18 +33,21 @@ module.exports = {
       { test: /\.json$/, loader: 'json' },
       {
         test: /\.scss$/,
-        include: path.join(__dirname, 'assets/react'),
-        loaders: [
+        include: path.join(__dirname, 'assets'),
+        loader: ExtractTextPlugin.extract(
           'style',
-          'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
-          'postcss',
-          'sass',
-        ],
+          'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss!sass'
+        ),
       },
     ],
   },
+  plugins: [
+    new ExtractTextPlugin('app.css', {
+      allChunks: true,
+    }),
+  ],
   postcss: () => (
-    [autoprefixer]
+    [autoprefixer, pxtorem]
   ),
   watchOptions: {
     poll: true,

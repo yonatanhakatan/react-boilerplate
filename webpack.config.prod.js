@@ -2,6 +2,8 @@ const path = require('path');
 const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
 const WebpackMd5Hash = require('webpack-md5-hash');
+const pxtorem = require('postcss-pxtorem');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const GLOBALS = {
   'process.env.NODE_ENV': JSON.stringify('production'),
@@ -11,7 +13,8 @@ const GLOBALS = {
 module.exports = {
   entry: ['babel-polyfill', './assets/react/app.js'],
   output: {
-    path: `${__dirname}/public/_js/`,
+    path: path.resolve(__dirname, 'public/_build/'),
+    publicPath: '/_build/',
     filename: 'bundle.js',
   },
   module: {
@@ -33,13 +36,11 @@ module.exports = {
       { test: /\.ico$/, loader: 'file-loader?name=[name].[ext]' },
       {
         test: /\.scss$/,
-        include: path.join(__dirname, 'assets/react'),
-        loaders: [
+        include: path.join(__dirname, 'assets'),
+        loader: ExtractTextPlugin.extract(
           'style',
-          'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
-          'postcss',
-          'sass',
-        ],
+          'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss!sass'
+        ),
       },
     ],
   },
@@ -60,9 +61,13 @@ module.exports = {
 
     // Minify JS
     new webpack.optimize.UglifyJsPlugin(),
+
+    new ExtractTextPlugin('app.css', {
+      allChunks: true,
+    }),
   ],
   postcss: () => (
-    [autoprefixer]
+    [autoprefixer, pxtorem]
   ),
   watchOptions: {
     poll: true,
