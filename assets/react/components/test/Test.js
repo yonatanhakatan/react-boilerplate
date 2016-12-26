@@ -16,8 +16,4 @@ const Test = () => {
   );
 };
 
-Test.propTypes = {
-  prizeCards: React.PropTypes.array,
-};
-
 export default cssModules(Test, styles, { allowMultiple: true });
