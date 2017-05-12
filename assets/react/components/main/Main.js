@@ -1,13 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Main = (props) => (
+const Main = props => (
   <div>
     {React.cloneElement(props.children, props)}
   </div>
 );
 
 Main.propTypes = {
-  children: React.PropTypes.any,
+  children: PropTypes.node,
+};
+
+Main.defaultProps = {
+  children: null,
 };
 
 export default Main;

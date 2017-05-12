@@ -1,7 +1,7 @@
 /*
 * Sample action for demo purposes
 */
-export function testAction(val) {
+export default function testAction(val) {
   return {
     type: 'TEST',
     val,
