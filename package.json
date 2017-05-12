@@ -2,6 +2,11 @@
   "name": "react-boilerplate",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "dev-server": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline",
+    "build-dev": "webpack --config webpack.config.js",
+    "build-production": "webpack -p --config webpack.config.prod.js"
+  },
   "dependencies": {
     "autoprefixer": "^6.3.7",
     "babel-core": "^6.10.4",
