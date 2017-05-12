@@ -5,7 +5,6 @@
 @import 'utils/functions';
 @import 'utils/mixins';
 @import 'utils/rems';
-@import 'utils/placeholders';
 
 /**
  * Import all base files
@@ -22,6 +21,3 @@
 /**
  * Import print styles (if necessary)
  */
-@media print {
-
-}

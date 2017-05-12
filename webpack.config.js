@@ -2,6 +2,7 @@ const path = require('path');
 const autoprefixer = require('autoprefixer');
 const pxtorem = require('postcss-pxtorem');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
   entry: ['babel-polyfill', './assets/react/app.js'],
@@ -45,6 +46,10 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('app.css', {
       allChunks: true,
+    }),
+    new StyleLintPlugin({
+      files: ['**/*.s?(a|c)ss'],
+      syntax: 'scss',
     }),
   ],
   postcss: () => (

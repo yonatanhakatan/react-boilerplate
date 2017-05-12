@@ -71,6 +71,9 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.7.0",
     "react-addons-test-utils": "^15.2.1",
+    "stylelint": "^7.10.1",
+    "stylelint-config-standard": "^16.0.0",
+    "stylelint-webpack-plugin": "^0.7.0",
     "webpack-dev-server": "^1.14.1"
   },
   "browserslist": ["last 2 versions"]
