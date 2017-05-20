@@ -6,6 +6,7 @@ An ever-evolving boilerplate for React SPA's using Redux.
 ## Storybook
 
 To start storybook, run the following:
+
 `./node_modules/.bin/start-storybook -p 9000 -s ./public`
 
 ## Generating Components
@@ -20,7 +21,9 @@ folder/storybook/component.js
 ```
 
 As this can be a bit of a pain to do manually, there is a great tool called [redux-cli](https://github.com/SpencerCDixon/redux-cli) which you should install  globally by running:
+
 `npm i redux-cli -g`
 
 Then you can easily generate a new component structure using:
+
 `redux g boilerplate NameOfComponent`
