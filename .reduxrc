@@ -1,0 +1,5 @@
+{
+    "sourceBase":"assets",
+    "componentPath":"react/components",
+    "fileCasing":"camel"
+}
