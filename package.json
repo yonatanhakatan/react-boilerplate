@@ -21,7 +21,7 @@
     "css-loader": "^0.26.1",
     "cssnano": "^3.7.1",
     "es6-promise": "^3.2.1",
-    "extract-text-webpack-plugin": "^1.0.1",
+    "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.9.0",
     "glob": "^7.0.5",
     "immutability-helper": "^2.0.0",
@@ -52,11 +52,11 @@
     "svg4everybody": "^2.1.0",
     "svgo": "^0.6.6",
     "underscore": "^1.8.3",
-    "webpack": "^1.13.1",
+    "webpack": "^2.5.1",
     "webpack-md5-hash": "^0.0.5"
   },
   "devDependencies": {
-    "@kadira/storybook": "^1.38.0",
+    "@kadira/storybook": "^2.35.3",
     "babel-eslint": "^6.0.0",
     "enzyme": "^2.4.1",
     "eslint": "^3.19.0",
@@ -69,7 +69,7 @@
     "expect": "^1.20.2",
     "gaze": "^1.1.0",
     "jasmine-core": "^2.4.1",
-    "karma": "^1.1.1",
+    "karma": "^1.7.0",
     "karma-babel-preprocessor": "^6.0.1",
     "karma-coverage": "^1.1.1",
     "karma-firefox-launcher": "^1.0.0",
@@ -81,7 +81,7 @@
     "stylelint": "^7.10.1",
     "stylelint-config-standard": "^16.0.0",
     "stylelint-webpack-plugin": "^0.7.0",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^2.4.5"
   },
   "browserslist": ["last 2 versions"]
 }
